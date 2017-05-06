@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Inventory</title>
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <title>Book Shop Inventory</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
+  
+  <link rel="icon" href="/images/The Gruffalo.png" />
+
+  <link rel="stylesheet" type="text/css" href="/styles/buttons.css">
+  <link rel="stylesheet" type="text/css" href="/styles/forms.css">
+  <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+  <link rel="stylesheet" type="text/css" href="/styles/tables.css">
 </head>
 <body>
+<main class="flex flex--row">
   <nav>
-    <a href="/authors">All Authors</a>
-    <a href="/books">All Books</a>
+    <ul>
+      <li>
+        <a href="/books">Books</a>
+      </li>
+      <li>
+        <a href="/authors">Authors</a>
+      </li>
+    </ul>
   </nav>
+  <section id="content">
   <%= yield %>
+  </section>
+  </main>
 </body>
 </html>
