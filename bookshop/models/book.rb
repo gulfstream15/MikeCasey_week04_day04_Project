@@ -1,20 +1,27 @@
 require_relative( '../db/sql_runner' )
+require_relative( './author' )
 
 class Book
 
   attr_reader( :id )
-  attr_accessor( :title )
+  attr_accessor( :title, :quantity, :author_id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @title = options['title']
+    @quantity = options['quantity'].to_i
+    @author_id = options['author_id'].to_i
   end
 
   def save()
     sql = "INSERT INTO books (
-      title
+      title,
+      quantity,
+      author_id
     ) VALUES (
-      '#{ @title }'
+      '#{ @title }',
+       #{ @quantity },
+       #{ @author_id }
     ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
@@ -29,6 +36,14 @@ class Book
   def self.delete_all
     sql = "DELETE FROM books"
     SqlRunner.run( sql )
+  end
+
+  def author()
+    sql = "SELECT * FROM authors 
+    WHERE id = #{@author_id}"
+    author = SqlRunner.run(sql)
+    result = Author.new( author.first )
+    return result
   end
 
 end
