@@ -12,8 +12,7 @@ CREATE TABLE authors
 CREATE TABLE titles
 (
   id SERIAL8 primary key,
-  book_title VARCHAR(255),
-  book_publisher VARCHAR(255)
+  book_title VARCHAR(255)
 );
 
 CREATE TABLE books
