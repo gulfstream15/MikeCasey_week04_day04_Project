@@ -1,33 +1,33 @@
 require_relative( '../db/sql_runner' )
 
-class Title
+class Book
 
   attr_reader( :id )
-  attr_accessor( :book_title )
+  attr_accessor( :title )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
-    @book_title = options['book_title']
+    @title = options['title']
   end
 
   def save()
-    sql = "INSERT INTO titles (
-      book_title
+    sql = "INSERT INTO books (
+      title
     ) VALUES (
-      '#{ @book_title }'
+      '#{ @title }'
     ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
   end
 
   def self.all()
-    sql = "SELECT * FROM titles"
+    sql = "SELECT * FROM books"
     results = SqlRunner.run( sql )
-    return results.map { |hash| Title.new( hash ) }
+    return results.map { |hash| Book.new( hash ) }
   end
 
   def self.delete_all
-    sql = "DELETE FROM titles"
+    sql = "DELETE FROM books"
     SqlRunner.run( sql )
   end
 
