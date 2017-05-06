@@ -26,7 +26,7 @@ title1 = Title.new({
 title1.save()
 
 title2 = Title.new({
-  'book_title' => "The Gruffulo"
+  'book_title' => "The Gruffalo"
 })
 
 title2.save()

@@ -1,0 +1,16 @@
+<h1>All Authors</h1>
+
+<table>
+  <tr>
+    <th>First Name</th>
+    <th></th>
+    <th>Second Name</th>
+  </tr>
+  <% for author in @authors %>
+  <tr>
+    <td><%= author.first_name %></td>
+    <td>|</td>
+    <td><%= author.last_name %></td>
+  </tr>
+  <% end %>
+</table>
