@@ -9,6 +9,11 @@ get '/books' do
   erb ( :"books/index" )
 end
 
+# NEW - CREATE
+get '/books/new' do
+  erb( :"books/new" )
+end
+
 # CREATE - CREATE
 post '/books' do
   @books = Book.new(params)
