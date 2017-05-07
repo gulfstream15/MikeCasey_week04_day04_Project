@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/book.rb')
+require_relative('../models/author.rb')
 
 # INDEX - READ  
 get '/books' do
@@ -11,6 +12,7 @@ end
 
 # NEW - CREATE
 get '/books/new' do
+  @authors = Author.all()
   erb( :"books/new" )
 end
 

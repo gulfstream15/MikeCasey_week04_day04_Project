@@ -1,0 +1,59 @@
+body {
+  padding: 30px;
+  font-family: 'Black', cursive;
+  /*color: #ccad00;*/
+  color: #000000;
+  /*background-image: url('../images/the_gruffalo.png'), url('../images/the_enormous_crocodile.png');*/
+  /*background-image: url('../images/the_enormous_crocodile.png');*/
+}
+
+a {
+  text-decoration: none;
+  color: red;
+}
+
+a:hover {
+  color: darkred;
+}
+
+#menu {
+  width: 220px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.menu-item {
+  display: inline-block;
+  flex-grow: 1;
+}
+
+#logo {
+  text-align: center;
+}
+
+#book-wrapper {
+  margin-left: 300px;
+}
+.book {
+  border: 5px double;
+  margin: 0 35px 30px 0;  
+  padding: 25px;
+  width: 200px;
+  display: inline-block;
+}
+
+.form-el {
+  margin: 10px 0;
+}
+
+.form-wrapper .form-el input[type="submit" i] {
+  margin-left: 180px;
+}
+
+.form-wrapper .form-el label {
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+  width: 160px;
+  margin: 0 1em 0 0;
+}
