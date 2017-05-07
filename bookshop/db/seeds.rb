@@ -2,8 +2,8 @@ require_relative( '../models/author.rb' )
 require_relative( '../models/book.rb' )
 require('pry-byebug')
 
-# Author.delete_all()
-# Book.delete_all()
+Author.delete_all()
+Book.delete_all()
 
 author1 = Author.new({
   'first_name' => "Roald",
@@ -21,14 +21,16 @@ author2.save()
 
 book1 = Book.new({
   'title' => "The Enormous Crocodile",
-  'quantity' => 5
+  'quantity' => 5,
+  'author_id' => author1.id
 })
 
 book1.save()
 
 book2 = Book.new({
   'title' => "The Gruffalo",
-  'quantity' => 10
+  'quantity' => 10,
+  'author_id' => author2.id
 })
 
 book2.save()

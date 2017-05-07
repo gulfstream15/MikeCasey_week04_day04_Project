@@ -34,4 +34,18 @@ class Author
     SqlRunner.run( sql )
   end
 
+  def self.all()
+    sql = "SELECT * FROM authors;"
+    authors = SqlRunner.run( sql )
+    result = authors.map { |author| Author.new( author ) }
+    return result
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM authors WHERE id=#{id};"
+    author = SqlRunner.run( sql )
+    result = Author.new( author.first )
+    return result
+  end
+
 end

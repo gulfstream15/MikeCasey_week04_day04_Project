@@ -46,4 +46,15 @@ class Book
     return result
   end
 
+  def get_quantity()
+    # Return the count of a particular book
+  end
+
+  def Book.find( id )
+      sql = "SELECT * FROM books WHERE id=#{id};"
+      book = SqlRunner.run( sql )
+      result = Book.new( book.first )
+      return result
+  end
+
 end
