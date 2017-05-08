@@ -3,11 +3,8 @@
   <lable for="title-field">Title:</lable>
   <input id="title-field" name="title" type="text" />
 
-  <label for="quantity">How many copies?</label>
-  <input id="quantity" name="quantity" type="number" >
-
   <div class="form-el">
-        <label for="author_select">Select Author:</label> 
+        <label for="author_select">Select an existing author:</label> 
         <select name="author_id" id="author_select">
           <% @authors.each do |author| %>
               <option value=<%= author.id %>><%= author.get_full_name() %></option>
@@ -15,6 +12,9 @@
         </select>
   </div>
 
-  <input type="submit" value="Add Book">
+  <label for="quantity">How many copies?</label>
+  <input id="quantity" name="quantity" type="number" >
+
+<input type="submit" value="Add Book(s)">
 
 </form>

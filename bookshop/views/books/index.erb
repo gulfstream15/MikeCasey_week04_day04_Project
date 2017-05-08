@@ -1,20 +1,16 @@
-<h1>All Books</h1>
+<h1>Inventory of Books</h1>
 
 <table>
-  <tr>
-    <th>Inventory of Books</th>
-    <th></th>
-  </tr>
   <% for book in @books %>
   <tr>
     <td><%= book.title %></td>
     <td><%= book.author.first_name %></td>
-    <td><%= book.author.last_name %></td> -->
+    <td><%= book.author.last_name %></td> 
     <td><%= book.quantity %></td>
     <td><%= book.stock_level %></td>
   </tr>
   <% end %>
 </table>
 
-<p><a href="/books/new">Add a book</a></p> 
+<p><a href="/books/new">Add book(s)</a></p> 
 

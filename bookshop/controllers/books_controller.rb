@@ -12,6 +12,7 @@ end
 
 # NEW - CREATE - get the authors
 get '/books/new' do
+  @books = Book.all()
   @authors = Author.all()
   erb( :"books/new" )
 end
