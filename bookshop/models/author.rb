@@ -40,6 +40,11 @@ class Author
     SqlRunner.run( sql )
   end
 
+  def delete()
+    sql = "DELETE FROM authors WHERE id=#{ @id };"
+    SqlRunner.run( sql )
+  end
+
   def self.all()
     sql = "SELECT * FROM authors;"
     authors = SqlRunner.run( sql )

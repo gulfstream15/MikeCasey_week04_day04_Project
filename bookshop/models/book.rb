@@ -46,6 +46,11 @@ class Book
     SqlRunner.run( sql )
   end
 
+  def self.destroy(id)
+     sql = "DELETE FROM books where id = #{id}"
+     SqlRunner.run( sql )
+  end
+
   def self.delete_all
     sql = "DELETE FROM books"
     SqlRunner.run( sql )
@@ -80,9 +85,11 @@ class Book
   end
 
   def Book.find( id )
+    puts "IN BOOK FIND id is #{id}"
     sql = "SELECT * FROM books WHERE id=#{id};"
     book = SqlRunner.run( sql )
     result = Book.new( book.first )
+    puts "result is #{result}"
     return result
   end
 
