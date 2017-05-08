@@ -4,13 +4,14 @@ require_relative( './author' )
 class Book
 
   attr_reader( :id )
-  attr_accessor( :title, :quantity, :author_id )
+  attr_accessor( :title, :quantity, :author_id,  )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @quantity = options['quantity'].to_i
     @author_id = options['author_id'].to_i
+    @stock_level = options['stock_level']
   end
 
   def save()
@@ -46,13 +47,16 @@ class Book
     return result
   end
 
-  # def calculate_quantity()
-  #   # Return the count of a particular book
-  # end
-
-  # def calculate_total()
-
-  # end
+  def stock_level()
+    if (@quantity >=0 && @quantity < 10)
+      @stock_level = "low"
+    elsif ( @quantity >= 10 && @quantity < 30 )
+      @stock_level = "medium"
+    elsif ( @quantity >= 30)
+          @stock_level = "high"
+    end
+    return @stock_level
+  end
 
   # def Book.find( id )
   #     sql = "SELECT * FROM books WHERE id=#{id};"

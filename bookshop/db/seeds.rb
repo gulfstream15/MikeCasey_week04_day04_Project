@@ -21,7 +21,7 @@ author2.save()
 
 book1 = Book.new({
   'title' => "The Enormous Crocodile",
-  'quantity' => 5,
+  'quantity' => 30,
   'author_id' => author1.id
 })
 
@@ -29,7 +29,7 @@ book1.save()
 
 book2 = Book.new({
   'title' => "The Gruffalo",
-  'quantity' => 10,
+  'quantity' => 5,
   'author_id' => author2.id
 })
 

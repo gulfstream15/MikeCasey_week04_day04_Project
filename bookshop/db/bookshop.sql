@@ -13,5 +13,6 @@ CREATE TABLE books
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255),
   quantity INT4,
+  stock_level VARCHAR(255),
   author_id INT4 REFERENCES authors(id) 
 );

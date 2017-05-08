@@ -9,6 +9,7 @@ class Author
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name  = options['last_name']
+    @full_name  = options['full_name']
   end
 
   def save()
@@ -21,6 +22,11 @@ class Author
     ) RETURNING *"
     results = SqlRunner.run(sql)
     @id = results.first()['id'].to_i
+  end
+
+  def get_full_name()
+    @full_name = "#{@first_name} " + "#{@last_name}"
+    return @full_name
   end
 
   def self.all()
