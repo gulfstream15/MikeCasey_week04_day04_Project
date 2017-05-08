@@ -24,4 +24,17 @@ post '/books' do
   redirect '/books'
 end
 
+# DESTROY DELETE
+post '/books/:id/delete' do
+  # id here is one specific book
+  @book = Book.find( params[:id] )
+  @book.delete()
+  erb( :destroy)
+end
 
+# EDIT
+get '/books/:id/edit' do
+  # get the current book
+  @book = Book.find( params[:id] )
+  erb( :edit)
+end
