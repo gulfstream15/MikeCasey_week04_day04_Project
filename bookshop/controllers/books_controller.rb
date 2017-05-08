@@ -29,12 +29,19 @@ post '/books/:id/delete' do
   # id here is one specific book
   @book = Book.find( params[:id] )
   @book.delete()
-  erb( :destroy)
+  erb( :"books/destroy")
 end
 
 # EDIT
 get '/books/:id/edit' do
   # get the current book
   @book = Book.find( params[:id] )
-  erb( :edit)
+  erb( :"books/edit")
 end
+
+# SHOW
+get '/books/:id' do 
+  @book = Book.find( params[:id] )
+  erb( :"books/show" )
+end
+

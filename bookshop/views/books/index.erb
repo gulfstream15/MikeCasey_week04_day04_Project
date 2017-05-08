@@ -1,4 +1,4 @@
-<h1>Inventory of Books</h1>
+<h1>Books Inventory</h1>
 
 <table>
   <% for book in @books %>
@@ -8,9 +8,16 @@
     <td><%= book.author.last_name %></td> 
     <td><%= book.quantity %></td>
     <td><%= book.stock_level %></td>
+    <td><%= book.buy_price %></td> 
+    <td><%= book.sell_price %></td> 
+    <td><%= book.markup %></td> 
+    <!-- <td><a href="/books/show">Delete Book</a></td> -->
   </tr>
   <% end %>
 </table>
 
 <p><a href="/books/new">Add book(s)</a></p> 
+
+<p><a href="/books/show">Delete book(s)</a></p>
+
 

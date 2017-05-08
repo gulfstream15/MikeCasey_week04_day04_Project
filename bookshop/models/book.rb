@@ -4,24 +4,31 @@ require_relative( './author' )
 class Book
 
   attr_reader( :id )
-  attr_accessor( :title, :quantity, :author_id,  )
+  attr_accessor( :title, :quantity, :buy_price, :sell_price, :author_id,  )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @quantity = options['quantity'].to_i
+    @buy_price = options['buy_price'].to_f
+    @sell_price = options['sell_price'].to_f
     @author_id = options['author_id'].to_i
     @stock_level = options['stock_level']
+    @markup = options['markup'].to_f
   end
 
   def save()
     sql = "INSERT INTO books (
       title,
       quantity,
+      buy_price,
+      sell_price,
       author_id
     ) VALUES (
       '#{ @title }',
        #{ @quantity },
+       #{ @buy_price },
+       #{ @sell_price },
        #{ @author_id }
     ) RETURNING *"
     results = SqlRunner.run(sql)
@@ -63,11 +70,20 @@ class Book
     return @stock_level
   end
 
-  # def Book.find( id )
-  #     sql = "SELECT * FROM books WHERE id=#{id};"
-  #     book = SqlRunner.run( sql )
-  #     result = Book.new( book.first )
-  #     return result
-  # end
+  def reduce_stock()
+    
+  end
+
+  def markup()
+    @markup = @sell_price - @buy_price
+    return @markup
+  end
+
+  def Book.find( id )
+    sql = "SELECT * FROM books WHERE id=#{id};"
+    book = SqlRunner.run( sql )
+    result = Book.new( book.first )
+    return result
+  end
 
 end
