@@ -10,7 +10,7 @@ get '/books' do
   erb ( :"books/index" )
 end
 
-# NEW - CREATE
+# NEW - CREATE - get the authors
 get '/books/new' do
   @authors = Author.all()
   erb( :"books/new" )
@@ -22,3 +22,5 @@ post '/books' do
   @books.save()
   redirect '/books'
 end
+
+

@@ -6,6 +6,15 @@
   <label for="quantity">How many copies?</label>
   <input id="quantity" name="quantity" type="number" >
 
+  <div class="form-el">
+        <label for="author_select">Select Author:</label> 
+        <select name="author_id" id="author_select">
+          <% @authors.each do |author| %>
+              <option value=<%= author.id %>><%= author.first_name %></option>
+          <% end %>
+        </select>
+  </div>
+
   <input type="submit" value="Add Book">
 
 </form>
