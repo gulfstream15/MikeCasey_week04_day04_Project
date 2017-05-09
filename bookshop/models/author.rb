@@ -24,6 +24,17 @@ class Author
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = " UPDATE authors SET (
+      first_name, 
+      last_name
+    ) = (
+      '#{ @first_name }',
+       #{ @last_name }
+    ) WHERE id = #{ @id };"
+    SqlRunner.run(sql)
+  end
+
   def get_full_name()
     @full_name = "#{@first_name} " + "#{@last_name}"
     return @full_name

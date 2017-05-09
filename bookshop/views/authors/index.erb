@@ -1,12 +1,15 @@
 <h1>Authors Inventory</h1>
 
+<p><a href="/authors/new">Add an author</a></p> 
+
 <table>
+
   <tr>
     <th>First Name</th>
     <th></th>
     <th>Second Name</th>
-    
   </tr>
+
   <% for author in @authors %>
   <tr>
     <td><%= author.first_name %></td>
@@ -24,4 +27,3 @@
   <% end %>
 </table>
 
-<p><a href="/authors/new">Add an author</a></p> 

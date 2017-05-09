@@ -1,33 +1,37 @@
 <form method="post" action="/authors/<%= @author.id %>">
 
-<tr>
- <td>
-  <label for="first-name-field">First Name:</label>
-  <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @author.first_name%>"
-  />
- </td>
-</tr>
+<table>
 
-<tr>
- <td>
-  <label for="last-name-field">Last Name:</label>
-  <input
-   type="text"
-   name="last_name"
-   id="last-name-field"
-   value="<%= @author.last_name%>"
-  />
- </td>
-</tr>
+  <tr>
+   <td>
+    <label for="first-name-field">First Name:</label>
+    <input
+    type="text"
+    name="first_name"
+    id="first-name-field"
+    value="<%= @author.first_name%>"
+    />
+   </td>
+  </tr>
+
+  <tr>
+   <td>
+    <label for="last-name-field">Last Name:</label>
+    <input
+     type="text"
+     name="last_name"
+     id="last-name-field"
+     value="<%= @author.last_name%>"
+   />
+   </td>
+ </tr>
  
  <tr>
   <td>
-   <input type='submit' value="Edit Author">
+   <input type='submit' value="Update Author">
   </td>
  </tr>
+
+ </table>
 
 </form>

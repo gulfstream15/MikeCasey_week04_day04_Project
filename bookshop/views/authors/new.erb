@@ -1,11 +1,25 @@
-<form action="/authors" method="POST">  
+<table>
 
-  <lable for="first-name-field">First Name:</lable>
-  <input id="first-name-field" name="first_name" type="text" />
+  <form action="/authors" method="POST">  
+ 
+    <tr>
+     <td>    
+      <lable for="first-name-field">Author First Name:</lable>
+      <input id="first-name-field" name="first_name" type="text" />
+     </td>
+    </tr>
+    <tr>
+     <td>
+     <label for="last-name-field">Author Last Name:</label>
+     <input id="last-name-field" name="last_name" type="text" >
+     </td>
+    </tr>
+    <tr>
+     <td> 
+      <input type="submit" value="Add Author">
+     </td>
+    </tr>
 
-  <label for="last-name-field">Last Name:</label>
-  <input id="last-name-field" name="last_name" type="text" >
+  </form>
 
-  <input type="submit" value="Add Author">
-
-</form>
+ </table> 
