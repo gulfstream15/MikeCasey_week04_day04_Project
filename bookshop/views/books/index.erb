@@ -4,19 +4,22 @@
   <% for book in @books %>
   <tr>
     <td><%= book.title %></td>
+    <td><%= book.id %></td>
     <td><%= book.author.first_name %></td>
     <td><%= book.author.last_name %></td> 
     <td><%= book.quantity %></td>
     <td><%= book.stock_level %></td>
     <td><%= book.buy_price %></td> 
     <td><%= book.sell_price %></td> 
-    <td><%= book.markup %></td> 
-    <td><a href="/books/show">Delete Book</a></td>
+    <td><%= sprintf('%.2f', book.markup) %></td> 
+    <td>
+    <form method="post" action="/books/<%= book.id %>/delete">
+      <input type="submit" value="Delete Book"/>
+    </form>
+    </td>
   </tr>
   <% end %>
 </table>
 
 <p><a href="/books/new">Add book(s)</a></p> 
-
-<p><a href="/books/show">Delete book(s)</a></p>
 

@@ -1,4 +1,4 @@
-<form method="post" action="/books/<%= @book.id %>">
+<<!-- form method="post" action="/books/<%= @book.id %>">
   <label for="title-field">Title:</label>
   <input
   type="text"
@@ -16,4 +16,8 @@
   />
 
   <input type='submit' value="Edit Book>
-</form>
+</form> -->
+
+<p>Title: <%= @book.title %></p>
+<p>Quantity: <%= @book.quantity %></p>
+<p><a href="/books/<%= @book.id %>/edit">Edit Book</a></p> 
