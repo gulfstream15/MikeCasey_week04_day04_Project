@@ -3,12 +3,20 @@
 <p><a href="/books/new">Add book(s)</a></p> 
 
 <table>
+  <tr>
+    <th align="left">Title</th>
+    <th align="left">Author</th> 
+    <th align="left">Quantity</th>
+    <th align="left">Stock Level</th>
+    <th align="left">Buy Price</th>
+    <th align="left">Sell Price</th>
+    <th align="left">Mark Up</th>
+  </tr>
+
   <% for book in @books %>
   <tr>
     <td><%= book.title %></td>
-    <td><%= book.id %></td>
-    <td><%= book.author.first_name %></td>
-    <td><%= book.author.last_name %></td> 
+    <td><%= book.author.get_full_name() %></td>
     <td><%= book.quantity %></td>
     <td><%= book.stock_level %></td>
     <td><%= book.buy_price %></td> 

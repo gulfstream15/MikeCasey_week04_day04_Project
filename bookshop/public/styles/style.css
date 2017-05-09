@@ -8,6 +8,10 @@ body {
   background-position: right center;
 }
 
+/*table, th, td {
+    border: 1px solid black;
+}*/
+
 a {
   text-decoration: none;
   color: red;
@@ -29,7 +33,7 @@ a:hover {
 }
 
 #logo {
-  text-align: center;
+  text-align: left;
 }
 
 #book-wrapper {
