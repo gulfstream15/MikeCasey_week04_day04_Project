@@ -36,14 +36,20 @@ class Book
   end
 
   def update()
-    sql = "UPDATE books SET
-      title = '#{ @title }',
-      quantity = '#{ @quantity }',
-      buy_price = '#{ @buy_price }',
-      sell_price = '#{ @sell_price }',
-      author_id = #{ @author_id }
-      WHERE id = '#{ @id }';"
-    SqlRunner.run( sql )
+    sql = " UPDATE books SET (
+      title,
+      quantity,
+      buy_price,
+      sell_price,
+      author_id
+    ) = (
+      '#{ @title }',
+       #{ @quantity },
+       #{ @buy_price },
+       #{ @sell_price },
+       #{ @author_id }
+    ) WHERE id = #{ @id };"
+    SqlRunner.run(sql)
   end
 
   def self.all()
@@ -91,8 +97,6 @@ class Book
   end
 
   def Book.find( id )
-    puts "IN BOOK FIND @id is #{@id}"
-    puts "IN BOOK FIND id is #{id}"
     sql = "SELECT * FROM books WHERE id=#{id};"
     book = SqlRunner.run( sql )
     result = Book.new( book.first )

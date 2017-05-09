@@ -14,5 +14,22 @@
   id="quantity-field"
   value="<%= @book.quantity() %>"
   />
-  <input type='submit' value="Edit Book">
+
+  <label for="author-field">Author:</label>
+  <input
+  type="text"
+  name="author"
+  id="author-field"
+  value="<%= @book.author().get_full_name() %>"
+  />
+
+  <label for="author-id-field">Book ID:</label>
+  <input
+  type="number"
+  name="author_id"
+  id="author-id-field"
+  value="<%= @book.author_id %>"
+  />
+
+  <input type='submit' value="Update Book">
 </form>
