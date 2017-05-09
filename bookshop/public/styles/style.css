@@ -5,14 +5,23 @@ body {
   /*color: #000000;*/
   /*background-image: url('../images/the_gruffalo.png'), url('../images/the_enormous_crocodile.png');*/
   background-image: url('../images/the_gruffalo.png');
-  background-position: right top;
-  /*background-size: 580px 560px;*/
+  /*background-position: right; top;*/ 
+  background-attachment: fixed;
+  background-position: 50% 20%;
+  background-size: 280px 260px;
   background-repeat: no-repeat;
+
 }
 
-/*table, th, td {
-    border: 1px solid black;
-}*/
+.home-bg {
+background: url('../images/the_gruffalo.png') no-repeat center center fixed;
+}
+.book-bg {
+background: url('../images/the_enormous_crocodile.png') no-repeat center center fixed;
+}
+.author-bg {
+background: url('../images/the_gruffalo_opaque.png') no-repeat center center fixed;
+}
 
 a {
   text-decoration: none;
@@ -32,6 +41,12 @@ a:hover {
 .menu-item {
   display: inline-block;
   flex-grow: 1;
+  width: 150px;
+  height: 60px;
+  margin: 10px;
+  border: 3px solid #ccad00;
+  position: relative;
+  right: 400px;
 }
 
 #logo {
