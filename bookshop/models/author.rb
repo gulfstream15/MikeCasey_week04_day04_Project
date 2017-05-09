@@ -30,11 +30,11 @@ class Author
       last_name
     ) = (
       '#{ @first_name }',
-       #{ @last_name }
+      '#{ @last_name }'
     ) WHERE id = #{ @id };"
     SqlRunner.run(sql)
   end
-
+  
   def get_full_name()
     @full_name = "#{@first_name} " + "#{@last_name}"
     return @full_name
