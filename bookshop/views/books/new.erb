@@ -1,26 +1,54 @@
 <form action="/books" method="POST">  
 
-  <lable for="title-field">Title:</lable>
-  <input id="title-field" name="title" type="text" />
+  <table>
+   
+  <tr>  
+   <td>    
+    <lable for="title-field">Title:</lable>
+    <input id="title-field" name="title" type="text" />
+    </td>
+  </tr>
 
-  <div class="form-el">
-        <label for="author_select">Select an existing author:</label> 
-        <select name="author_id" id="author_select">
-          <% @authors.each do |author| %>
-              <option value=<%= author.id %>><%= author.get_full_name() %></option>
-          <% end %>
-        </select>
-  </div>
+  <tr>  
+   <td>
+     <div class="form-el">
+          <label for="author_select">Select an existing author:</label> 
+          <select name="author_id" id="author_select">
+           <% @authors.each do |author| %>
+                <option value=<%= author.id %>><%= author.get_full_name() %></option>
+           <% end %>
+         </select>
+     </div>
+    </td>
+  </tr>
 
-  <label for="quantity">How many copies?</label>
-  <input id="quantity" name="quantity" type="number" >
+  <tr>  
+   <td>
+    <label for="quantity">How many copies?</label>
+    <input id="quantity" name="quantity" type="number" >
+   </td> 
+  </tr>
 
-  <lable for="buy-price-field">Buy Price:</lable>
-  <input id="buy-price-field" name="buy_price" type="text" />
+  <tr>  
+   <td>
+    <lable for="buy-price-field">Buy Price:</lable>
+    <input id="buy-price-field" name="buy_price" type="text" />
+   </td> 
+  </tr>
 
-  <lable for="sell-price-field">Sell Price:</lable>
-  <input id="sell-price-field" name="sell_price" type="text" />
+  <tr>  
+   <td>
+     <lable for="sell-price-field">Sell Price:</lable>
+     <input id="sell-price-field" name="sell_price" type="text" />
+    </td> 
+  </tr>
 
-<input type="submit" value="Add Book(s)">
+  <tr>  
+   <td>
+    <input type="submit" value="Add Book(s)">
+   </td> 
+  </tr>
+
+  </table>
 
 </form>
