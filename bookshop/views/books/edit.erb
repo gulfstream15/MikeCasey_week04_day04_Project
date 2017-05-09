@@ -15,6 +15,22 @@
   value="<%= @book.quantity() %>"
   />
 
+  <label for="buy-price-field">Buy Price:</label>
+  <input
+  type="number"
+  name="buy_price"
+  id="buy-price-field"
+  value="<%= @book.buy_price() %>"
+  />
+
+  <label for="sell-price-field">Sell Price:</label>
+  <input
+  type="number"
+  name="sell_price"
+  id="sell-price-field"
+  value="<%= @book.sell_price() %>"
+  />
+
   <label for="author-field">Author:</label>
   <input
   type="text"
