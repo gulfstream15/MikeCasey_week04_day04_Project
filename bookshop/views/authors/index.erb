@@ -5,17 +5,21 @@
     <th>First Name</th>
     <th></th>
     <th>Second Name</th>
-    <th></th>
-    <th>ID</th>
-
+    
   </tr>
   <% for author in @authors %>
   <tr>
     <td><%= author.first_name %></td>
     <th></th>
     <td><%= author.last_name %></td>
-    <th></th>
-    <td><%= author.id %></td>
+    <td>
+      <form method="post" action="/authors/<%= author.id %>/delete">
+       <input type="submit" value="Remove Author"/>
+      </form>
+    </td>
+    <td>
+      <a href="/authors/<%= author.id %>/edit">Edit Author</a>
+    </td>
   </tr>
   <% end %>
 </table>

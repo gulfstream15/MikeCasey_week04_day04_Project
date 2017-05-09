@@ -36,8 +36,29 @@ get '/authors/:id/edit' do
   erb( :"authors/edit")
 end
 
-# SHOW
+## SHOW
 get '/authors/:id' do 
   @author = Author.find( params[:id] )
   erb( :"authors/show" )
+end
+
+# EDIT
+get '/authors/:id/edit' do
+  # get the current author
+  @author = Author.find( params[:id] )
+  erb( :"books/author")
+end
+
+# UPDATE
+post '/authors/:id' do 
+  @author = Author.new( params )
+  @author.update()
+  erb( :"authors/update")
+end
+
+# DELETE
+post '/authors/:id/delete' do
+  @author = Book.find( params[:id] )
+  @author.delete()
+  erb( :"authors/destroy")
 end

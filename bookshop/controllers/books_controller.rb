@@ -27,7 +27,6 @@ end
 # SHOW
 get '/books/:id' do 
   @book = Book.find( params[:id] )
-  puts "@book.id is #{@book.id}"
   erb( :"books/show" )
 end
 
