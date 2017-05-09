@@ -26,7 +26,6 @@ end
 
 # SHOW
 get '/books/:id' do 
-  puts "CALLING SHOW id is #{params[:id]}"
   @book = Book.find( params[:id] )
   puts "@book.id is #{@book.id}"
   erb( :"books/show" )
@@ -40,7 +39,11 @@ get '/books/:id/edit' do
 end
 
 # UPDATE
-
+post '/books/:id' do 
+  @book = Book.new( params )
+  @book.update()
+  erb( :"books/update")
+end
 
 # DELETE
 post '/books/:id/delete' do

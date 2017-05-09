@@ -35,6 +35,17 @@ class Book
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE books SET
+      title = '#{ @title }',
+      quantity = '#{ @quantity }',
+      buy_price = '#{ @buy_price }',
+      sell_price = '#{ @sell_price }',
+      author_id = #{ @author_id }
+      WHERE id = '#{ @id }';"
+    SqlRunner.run( sql )
+  end
+
   def self.all()
     sql = "SELECT * FROM books"
     results = SqlRunner.run( sql )
