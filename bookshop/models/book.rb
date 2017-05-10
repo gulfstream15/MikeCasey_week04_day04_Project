@@ -87,10 +87,6 @@ class Book
     return @stock_level
   end
 
-  def reduce_stock()
-    
-  end
-
   def markup()
     @markup = @sell_price - @buy_price
     return @markup

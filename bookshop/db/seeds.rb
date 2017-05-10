@@ -26,6 +26,13 @@ author3 = Author.new({
 
 author3.save()
 
+author4 = Author.new({
+  'first_name' => "Julia",
+  'last_name' => "Donaldson"
+})
+
+author4.save()
+
 book1 = Book.new({
   'title' => "The Enormous Crocodile",
   'quantity' => 30,
@@ -125,6 +132,47 @@ book10 = Book.new({
 })
 
 book10.save()
+
+book11 = Book.new({
+  'title' => "The Gruffalo",
+  'quantity' => 6,
+  'buy_price' => 23.99,
+  'sell_price' => 24.99,
+  'author_id' => author4.id
+})
+
+book11.save()
+
+book12 = Book.new({
+  'title' => "What the Ladybird Said",
+  'quantity' => 6,
+  'buy_price' => 23.99,
+  'sell_price' => 24.99,
+  'author_id' => author4.id
+})
+
+book12.save()
+
+book13 = Book.new({
+  'title' => "Postman Bear",
+  'quantity' => 7,
+  'buy_price' => 13.99,
+  'sell_price' => 14.99,
+  'author_id' => author4.id
+})
+
+book13.save()
+
+book14 = Book.new({
+  'title' => "Hide and Seek Pig",
+  'quantity' => 7,
+  'buy_price' => 12.99,
+  'sell_price' => 13.99,
+  'author_id' => author4.id
+})
+
+book14.save()
+
 
 binding.pry
 nil

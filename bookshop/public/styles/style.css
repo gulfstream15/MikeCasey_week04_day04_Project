@@ -10,17 +10,6 @@ body {
   background-position: 50% 20%;
   background-size: 280px 260px;
   background-repeat: no-repeat;
-
-}
-
-.home-bg {
-background: url('../images/the_gruffalo.png') no-repeat center center fixed;
-}
-.book-bg {
-background: url('../images/the_enormous_crocodile.png') no-repeat center center fixed;
-}
-.author-bg {
-background: url('../images/the_gruffalo_opaque.png') no-repeat center center fixed;
 }
 
 a {
@@ -44,13 +33,25 @@ a:hover {
   width: 150px;
   height: 60px;
   margin: 10px;
-  border: 3px solid #ccad00;
+  border: 3px solid green;
+  position: relative;
+  right: 400px;
+}
+
+.menu-item-two {
+  display: inline-block;
+  flex-grow: 1;
+  width: 150px;
+  height: 60px;
+  margin: 10px;
+  border: 3px solid red;
   position: relative;
   right: 400px;
 }
 
 #logo {
   text-align: left;
+  color: purple;
 }
 
 #book-wrapper {

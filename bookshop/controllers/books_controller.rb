@@ -4,20 +4,20 @@ require('pry-byebug')
 require_relative('../models/book.rb')
 require_relative('../models/author.rb')
 
-# INDEX - READ  
+# READ  
 get '/books' do
   @books = Book.all()
   erb ( :"books/index" )
 end
 
-# NEW - CREATE - get the authors
+# CREATE 
 get '/books/new' do
   @books = Book.all()
   @authors = Author.all()
   erb( :"books/new" )
 end
 
-# CREATE - CREATE
+# CREATE 
 post '/books' do
   @books = Book.new(params)
   @books.save()

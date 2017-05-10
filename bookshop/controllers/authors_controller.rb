@@ -14,14 +14,14 @@ get '/authors/new' do
   erb( :"authors/new" )
 end
 
-# CREATE - Add to the author inventory
+# CREATE 
 post '/authors' do
   @authors = Author.new(params)
   @authors.save()
   redirect '/authors'
 end
 
-# DESTROY DELETE
+# DESTROY 
 post '/authors/:id/delete' do
   # id here is one specific author
   @author = Author.find( params[:id] )
