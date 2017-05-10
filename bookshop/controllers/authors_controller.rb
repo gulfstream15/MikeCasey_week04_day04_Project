@@ -23,7 +23,6 @@ end
 
 # DESTROY 
 post '/authors/:id/delete' do
-  # id here is one specific author
   @author = Author.find( params[:id] )
   @author.delete()
   erb( :"authors/destroy")
@@ -31,7 +30,6 @@ end
 
 # EDIT
 get '/authors/:id/edit' do
-  # get the current book
   @author = Author.find( params[:id] )
   erb( :"authors/edit")
 end
@@ -44,7 +42,6 @@ end
 
 # EDIT
 get '/authors/:id/edit' do
-  # get the current author
   @author = Author.find( params[:id] )
   erb( :"books/author")
 end
