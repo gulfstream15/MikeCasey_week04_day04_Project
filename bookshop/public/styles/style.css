@@ -2,10 +2,7 @@ body {
   padding: 30px;
   font-family: 'Black', cursive;
   color: #ccad00;
-  /*color: #000000;*/
-  /*background-image: url('../images/the_gruffalo.png'), url('../images/the_enormous_crocodile.png');*/
   background-image: url('../images/the_gruffalo.png');
-  /*background-position: right; top;*/ 
   background-attachment: fixed;
   background-position: 50% 20%;
   background-size: 280px 260px;
@@ -52,6 +49,7 @@ a:hover {
 #logo {
   text-align: left;
   color: purple;
+  font-size: 40px;
 }
 
 #book-wrapper {
