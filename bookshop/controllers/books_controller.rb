@@ -32,7 +32,6 @@ end
 
 # EDIT
 get '/books/:id/edit' do
-  # get the current book
   @book = Book.find( params[:id] )
   erb( :"books/edit")
 end
