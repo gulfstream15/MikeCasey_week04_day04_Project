@@ -1,10 +1,10 @@
 body {
   padding: 30px;
   font-family: 'Black', cursive;
-  color: #ccad00;
-  background-image: url('../images/the_gruffalo.png');
+  color: #DAA520;
+  background-image: url('../images/gruffalo-walking.gif');
   background-attachment: fixed;
-  background-position: 50% 20%;
+  background-position: 70% 20%;
   background-size: 280px 260px;
   background-repeat: no-repeat;
 }
