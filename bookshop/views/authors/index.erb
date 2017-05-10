@@ -1,10 +1,10 @@
-<h1 style="color:red;">Author Inventory</h1>
+<h1 style="color:brown;">Author Inventory</h1>
 
-<p><a href="/authors/new">Add an author</a></p> 
+<p><a href="/authors/new" style="color:blue; font-size:20px">Add an author</a></p> 
 
 <table>
 
-  <tr>
+  <tr style="color:black;">
     <th>First Name</th>
     <th></th>
     <th>Second Name</th>
@@ -17,11 +17,11 @@
     <td><%= author.last_name %></td>
     <td>
       <form method="post" action="/authors/<%= author.id %>/delete">
-       <input type="submit" value="Remove Author"/>
+       <input type="submit" style="color:red;" value="Remove Author"/>
       </form>
     </td>
     <td>
-      <a href="/authors/<%= author.id %>/edit">Edit Author</a>
+      <a href="/authors/<%= author.id %>/edit" style="color:blue; font-size:15px">Edit Author</a>
     </td>
   </tr>
   <% end %>
