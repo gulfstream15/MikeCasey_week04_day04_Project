@@ -1,9 +1,8 @@
 body {
   padding: 30px;
   font-family: 'Black', cursive;
-  color: #DAA520;
+  color: black;
   background-image: url('../images/gruffalo-walking.gif');
-  background-attachment: fixed;
   background-position: 70% 20%;
   background-size: 280px 260px;
   background-repeat: no-repeat;
