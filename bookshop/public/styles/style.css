@@ -45,6 +45,11 @@ a:hover {
   right: 400px;
 }
 
+.edit-link-blue {
+  color: blue; 
+  font-size: 15px;
+}
+
 #logo {
   text-align: left;
   color: purple;
